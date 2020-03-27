@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: fact_daily_performance
+    description: A table with daily ad performance, clicks, etc.
+
+    columns:
+      - name: spend
+        description: The total amount spent on ads for this date, to the nearest dollar.
+        tests:
+          - not_null 
+
+      - name: date
+        tests:
+          - relationships:
+              to: ref('dim_date')
+              field: date

@@ -1,0 +1,8 @@
+
+    truncate table "dbryan"."public"."ad_account_metrics";
+    -- dbt seed --
+    
+            insert into "dbryan"."public"."ad_account_metrics" (date, impressions, clicks, spend) values
+            (%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s)
+        
+  
