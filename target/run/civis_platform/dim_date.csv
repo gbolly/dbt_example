@@ -1,0 +1,8 @@
+
+    truncate table "dbryan"."public"."dim_date";
+    -- dbt seed --
+    
+            insert into "dbryan"."public"."dim_date" (date_id, date, dow, business_day) values
+            (%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s)
+        
+  

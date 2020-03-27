@@ -1,0 +1,24 @@
+# For more information on how to configure this file, please see:
+# https://github.com/fishtown-analytics/dbt/blob/master/sample.profiles.yml
+
+default:
+  outputs:
+    dev:
+      type: redshift
+      threads: 1
+      host: "{{ env_var('DB_HOST')}}"
+      port: 5432
+      user: "{{ env_var('DB_CREDENTIAL_USERNAME')}}"
+      pass: "{{ env_var('DB_CREDENTIAL_PASSWORD')}}"
+      dbname: "dev"
+      schema: scratch
+    prod:
+      type: redshift
+      threads: 1
+      host: "{{ env_var('DB_HOST')}}"
+      port: 5432
+      user: "{{ env_var('DB_CREDENTIAL_USERNAME')}}"
+      pass: "{{ env_var('DB_CREDENTIAL_PASSWORD')}}"
+      dbname: "dev"
+      schema: scratch
+  target: prod
