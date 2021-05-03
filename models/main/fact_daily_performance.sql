@@ -1,3 +1,9 @@
+{{
+  config(
+    description = "Daily click performance calculations"
+  )
+}}
+
 select
     a.date::date as date,
     a.business_day::boolean as business_day,
