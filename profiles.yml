@@ -9,7 +9,6 @@ default:
       host: "{{ env_var('DB_HOST')}}"
       port: 5432
       user: "{{ env_var('DB_USER')}}"
-      {{ '{{ databasehost }}' }}
       pass: "{{ env_var('{{ env_var(DB_USER) }}'_PASSWORD) }}"
       dbname: "dev"
       schema: scratch
