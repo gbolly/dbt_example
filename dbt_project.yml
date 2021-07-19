@@ -23,7 +23,7 @@ clean-targets:         # directories to be removed by `dbt clean`
     - "dbt_modules"
 
 vars:
-  db_user: "{{ env_var('DB_USER') }} + "_" + {{ env_var('DB_USER')_PASSWORD }}"
+  db_user: "{{ env_var('DB_USER') + "_" + env_var('DB_USER')_PASSWORD }}"
 
 
 # Configuring models
