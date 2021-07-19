@@ -8,8 +8,8 @@ default:
       threads: 1
       host: "{{ env_var('DB_HOST')}}"
       port: 5432
-      user: "{{ env_var('DB_CREDENTIAL_USERNAME')}}"
-      pass: "{{ env_var('DB_CREDENTIAL_PASSWORD')}}"
+      user: "{{ env_var('GOKERAYI_USERNAME')}}"
+      pass: "{{ env_var('GOKERAYI_PASSWORD')}}"
       dbname: "dev"
       schema: scratch
     prod:
@@ -17,8 +17,8 @@ default:
       threads: 1
       host: "{{ env_var('DB_HOST')}}"
       port: 5432
-      user: "{{ env_var('DB_CREDENTIAL_USERNAME')}}"
-      pass: "{{ env_var('DB_CREDENTIAL_PASSWORD')}}"
+      user: "{{ env_var('GOKERAYI_USERNAME')}}"
+      pass: "{{ env_var('GOKERAYI_PASSWORD')}}"
       dbname: "dev"
       schema: scratch
   target: prod
