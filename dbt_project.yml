@@ -22,9 +22,6 @@ clean-targets:         # directories to be removed by `dbt clean`
     - "target"
     - "dbt_modules"
 
-vars:
-  db_user: "{{ env_var('DB_USER')_PASSWORD|upper }}"
-
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -41,15 +38,12 @@ models:
     # Applies to all files under models/example/
     example:
       materialized: table
-      vars:
-        db_user: "{{ env_var('DB_USER')_PASSWORD|upper }}"
 
     # Applies to all files under models/main/
     main:
       materialized: view
       vars:
         start_date: '2020-03-03'
-        db_user: "{{ env_var('DB_USER')_PASSWORD|upper }}"
 
 
 seeds:
