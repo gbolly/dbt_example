@@ -9,7 +9,8 @@ default:
       host: "{{ env_var('DB_HOST') }}"
       port: 5432
       user: "{{ env_var('DB_USER') }}"
-      pass: "{{ "{}_PASSWORD".format({{ env_var('DB_USER') }}) }}"
+      {{ installer_iso_src_location }}/{{ installer_version }}
+      pass: "{{ env_var({{ env_var('DB_USER') }}_PASSWORD) }}"
       dbname: "dev"
       schema: scratch
     prod:
@@ -18,7 +19,7 @@ default:
       host: "{{ env_var('DB_HOST')}}"
       port: 5432
       user: "{{ env_var('DB_USER') }}"
-      pass: "{{ "{}_PASSWORD".format({{ env_var('DB_USER') }}) }}"
+      pass: "{{ env_var({{ env_var('DB_USER') }}_PASSWORD) }}"
       dbname: "dev"
       schema: scratch
   target: prod
