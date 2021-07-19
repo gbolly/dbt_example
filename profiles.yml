@@ -6,10 +6,10 @@ default:
     dev:
       type: redshift
       threads: 1
-      host: "{{ env_var('DB_HOST')}}"
+      host: "{{ env_var('DB_HOST') }}"
       port: 5432
-      user: "{{ env_var('DB_USER')}}"
-      pass: "{{ env_var('{{ env_var(DB_USER) }}'_PASSWORD) }}"
+      user: "{{ env_var('DB_USER') }}"
+      pass: "{{ "{}_PASSWORD".format({{ env_var('DB_USER') }}) }}"
       dbname: "dev"
       schema: scratch
     prod:
@@ -17,8 +17,8 @@ default:
       threads: 1
       host: "{{ env_var('DB_HOST')}}"
       port: 5432
-      user: "{{ env_var('DB_USER')}}"
-      pass: "{{ env_var('{{ env_var(DB_USER) }}'_PASSWORD) }}"
+      user: "{{ env_var('DB_USER') }}"
+      pass: "{{ "{}_PASSWORD".format({{ env_var('DB_USER') }}) }}"
       dbname: "dev"
       schema: scratch
   target: prod
